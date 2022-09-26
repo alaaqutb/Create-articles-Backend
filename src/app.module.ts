@@ -7,6 +7,7 @@ import { UsersModule } from './users/users.module';
 import { ArticlesModule } from './articles/articles.module';
 import { AuthModule } from './auth/auth.module';
 import { AppService } from './app.service';
+import { AbilityModule } from './casl/ability.module';
 
 @Module({
   imports: [
@@ -23,6 +24,8 @@ import { AppService } from './app.service';
     UsersModule,
     ArticlesModule,
     AuthModule,
+    AbilityModule,
+    AbilityModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -6,10 +6,10 @@ import { UsersService } from './services/users/users.service';
 import { User } from 'src/typeorm/entities/User';
 import { Article } from 'src/typeorm/entities/Article';
 import { AuthService } from 'src/auth/auth.service';
-import { AuthModule } from 'src/auth/auth.module';
+import { AbilityModule } from 'src/casl/ability.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User, Article])],
+  imports: [TypeOrmModule.forFeature([User, Article]), AbilityModule],
   controllers: [UsersController],
   providers: [UsersService, AuthService, JwtService],
   exports: [UsersService],

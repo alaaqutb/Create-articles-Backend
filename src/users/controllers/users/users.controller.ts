@@ -13,10 +13,14 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { UpdateUserDto } from 'src/users/dtos/UpdateUser.dto';
+import { AbilityFactory } from 'src/casl/ability.factory';
 
 @Controller('users')
 export class UsersController {
-  constructor(private userservice: UsersService) {}
+  constructor(
+    private userservice: UsersService,
+    private abilityFactory: AbilityFactory,
+  ) {}
 
   @Get()
   getUsers() {

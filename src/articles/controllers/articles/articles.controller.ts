@@ -10,6 +10,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { UpdateArticleDto } from 'src/articles/dtos/UpdateArticle.dto';
 
 @Controller('articles')
 export class ArticlesController {
@@ -26,15 +27,15 @@ export class ArticlesController {
   }
 
   @Put(':id')
-  async updateUserById(
+  async updateArticleById(
     @Param('id', ParseIntPipe) id: number,
-    @Body() updateUserDto: CreateArticleDto,
+    @Body() updateArticleDto: UpdateArticleDto,
   ) {
-    await this.articleService.updateUser(id, updateUserDto);
+    await this.articleService.updateUser(id, updateArticleDto);
   }
 
   @Delete(':id')
-  async deleteUserById(@Param('id', ParseIntPipe) id: number) {
+  async deleteArticleById(@Param('id', ParseIntPipe) id: number) {
     await this.articleService.deleteArticle(id);
   }
 }
